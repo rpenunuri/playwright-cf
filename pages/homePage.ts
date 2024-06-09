@@ -30,7 +30,6 @@ export class HomePage extends BasePage {
     await this.page.click(this.closeIntroModalSelector);
   }
 
-
   async assertFeaturedLinksAreVisible() {
     await expect(this.featuredLinksDesktop).toHaveCount(4);
   }
