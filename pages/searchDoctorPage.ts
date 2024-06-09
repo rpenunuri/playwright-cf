@@ -2,14 +2,12 @@ import { Locator, expect } from '@playwright/test';
 import { BasePage } from './basePage';
 
 export class SearchDoctorPage extends BasePage {
-  readonly path: string;
   readonly findADoctor: Locator;
   readonly continueAsGuest: Locator;
 
   constructor(page) {
     super(page);
 
-    this.path = this.baseUrl + '/careers/';
     this.findADoctor = this.page.locator('h1.h1-margin');
     this.page.getByRole('link', { name: 'Search For Care' });
     this.continueAsGuest = this.page.getByRole('link', { name: 'Continue as Guest' });
@@ -24,6 +22,6 @@ export class SearchDoctorPage extends BasePage {
   }
 
   async assertContinueAsGuestIsVisible() {
-    await expect(this.continueAsGuest).toBeVisible({ timeout: 5000});
+    await expect(this.continueAsGuest).toBeVisible({ timeout: 5000 });
   }
 }

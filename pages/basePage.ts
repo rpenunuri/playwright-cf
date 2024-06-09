@@ -34,5 +34,5 @@ export abstract class BasePage {
       expect(actualURL).toBe(expectedURL);
       this.page = newPage;
     }
-  };
+  }
   
